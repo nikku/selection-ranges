@@ -6,6 +6,10 @@ All notable changes to [selection-ranges](https://github.com/nikku/selection-ran
 
 ___Note:__ Yet to be released changes appear here._
 
+## 1.1.0
+
+* `FEAT`: add `isSelected(el)` util
+
 ## 1.0.1
 
 * `CHORE`: ignore development assets
