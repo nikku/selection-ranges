@@ -28,6 +28,16 @@ getRange(el);
 setRange(el, range);
 ```
 
+```javascript
+/**
+ * Return true if element is part of window selection.
+ *
+ * @param  {Element}  el
+ * @return {Boolean}
+ */
+isSelected(el);
+```
+
 
 ## Usage
 

@@ -34,6 +34,30 @@ module.exports.getWindowSelection = getWindowSelection;
 
 
 /**
+ * Return true if element is part of window selection.
+ *
+ * @param  {Element}  el
+ * @return {Boolean}
+ */
+function isSelected(el) {
+
+  if (!selection.rangeCount) {
+    return null;
+  }
+
+  var focusNode = selection.focusNode;
+
+  if (el !== focusNode && !el.contains(focusNode)) {
+    return false;
+  }
+
+  return true;
+}
+
+module.exports.isSelected = isSelected;
+
+
+/**
  * Set cursor or selection position.
  *
  * @param {Element} el
@@ -56,13 +80,7 @@ module.exports.setRange = setRange;
  */
 function getRange(el) {
 
-  if (!selection.rangeCount) {
-    return null;
-  }
-
-  var focusNode = selection.focusNode;
-
-  if (el !== focusNode && !el.contains(focusNode)) {
+  if (!isSelected(el)) {
     return null;
   }
 

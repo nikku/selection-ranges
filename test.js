@@ -2,6 +2,7 @@
 
 var getRange = require('./').getRange,
     setRange = require('./').setRange,
+    isSelected = require('./').isSelected,
     applyRange = require('./').applyRange,
     getWindowSelection = require('./').getWindowSelection;
 
@@ -54,6 +55,38 @@ describe('selection-ranges', function() {
         start: 1,
         end: 4
       });
+    });
+
+  });
+
+
+  describe('isSelected', function() {
+
+    it('should return selection state', function() {
+
+      // given
+      node.innerHTML = (
+        '<div class="outer">' +
+          '<div class="a">' +
+            '<p>AAABB</p>' +
+          '</div>' +
+          '<div class="b">bar</div>' +
+        '</div>'
+      );
+
+      var range = document.createRange();
+      range.setStartBefore(node.querySelector('.a p'));
+      range.setEndAfter(node.querySelector('.a p'));
+
+      // when
+      applyRange(range);
+
+      // then
+      expect(isSelected(node.querySelector('.a p'))).to.be.true;
+      expect(isSelected(node.querySelector('.a'))).to.be.true;
+      expect(isSelected(node)).to.be.true;
+
+      expect(isSelected(node.querySelector('.b'))).to.be.false;
     });
 
   });
