@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "plugin:bpmn-io/es5",
+    "plugin:bpmn-io/mocha"
+  ],
+  "env": {
+    "browser": true
+  }
+}
