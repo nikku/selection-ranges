@@ -82,7 +82,6 @@ describe('selection-ranges', function() {
       applyRange(range);
 
       // then
-      expect(isSelected(node.querySelector('.a p'))).to.be.true;
       expect(isSelected(node.querySelector('.a'))).to.be.true;
       expect(isSelected(node)).to.be.true;
 

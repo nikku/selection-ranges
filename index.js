@@ -47,11 +47,7 @@ function isSelected(el) {
 
   var focusNode = selection.focusNode;
 
-  if (el !== focusNode && !el.contains(focusNode)) {
-    return false;
-  }
-
-  return true;
+  return el == focusNode || el.contains(focusNode);
 }
 
 module.exports.isSelected = isSelected;
