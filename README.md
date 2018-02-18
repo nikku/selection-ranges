@@ -1,6 +1,6 @@
-# selection-rangee
+# selection-ranges
 
-[![Build Status](https://travis-ci.org/nikku/selection-rangee.svg?branch=master)](https://travis-ci.org/nikku/selection-rangee)
+[![Build Status](https://travis-ci.org/nikku/selection-ranges.svg?branch=master)](https://travis-ci.org/nikku/selection-ranges)
 
 Manipulate selection ranges on contenteditable elements.
 
@@ -11,7 +11,7 @@ Manipulate selection ranges on contenteditable elements.
 import {
   getRange,
   setRange
-} from 'selection-rangee';
+} from 'selection-ranges';
 
 
 var node = <div contenteditable />;

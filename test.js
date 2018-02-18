@@ -6,7 +6,7 @@ var getRange = require('./').getRange,
     getWindowSelection = require('./').getWindowSelection;
 
 
-describe('selection-rangee', function() {
+describe('selection-ranges', function() {
 
   var node;
 
