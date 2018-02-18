@@ -1,5 +1,6 @@
 .eslintrc
 .travis.yml
+CHANGELOG.md
 README.md
 karma.conf.js
 test.js
