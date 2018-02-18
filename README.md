@@ -5,6 +5,30 @@
 Manipulate selection ranges on contenteditable elements.
 
 
+## API
+
+```javascript
+/**
+ * Return the selection on the given element as {start, end}.
+ *
+ * @param {Element} el
+ *
+ * @return {Object} selection range or null if element is not selected
+ */
+getRange(el);
+```
+
+```javascript
+/**
+ * Selects the given range on the specified element.
+ *
+ * @param {Element} el
+ * @param {Object} range {start, end}
+ */
+setRange(el, range);
+```
+
+
 ## Usage
 
 ```javascript
@@ -29,6 +53,11 @@ setRange(node, { start: 0, end: 30 });
 
 * Works around [browser issues](https://stackoverflow.com/questions/13949059/persisting-the-changes-of-range-objects-after-selection-in-html/13950376) and correctly handles `<br/>` and paragraph elements
 * Correctly handles out-of-bounds selections
+
+
+## Related
+
+* [selection-update](https://github.com/nikku/selection-update) - compute input selection updates on external content changes
 
 
 ## License
