@@ -1,5 +1,7 @@
 # selection-rangee
 
+[![Build Status](https://travis-ci.org/nikku/selection-rangee.svg?branch=master)](https://travis-ci.org/nikku/selection-rangee)
+
 Manipulate selection ranges on contenteditable elements.
 
 

@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - 'node'
+
+script:
+  - TEST_BROWSERS=ChromeHeadless,PhantomJS,Firefox xvfb-run npm run all
+
+addons:
+  firefox: latest
+  chrome: stable
