@@ -134,18 +134,18 @@ function getRange(el) {
     }
 
     if (!isClosing) {
-
-      // <br />, </div>, </p> node
-      if (isBr(next) || isDiv(next)) {
+      if (
+        isBr(next) || (
+          next.previousSibling && (
+            isDiv(next) ||
+            isParagraph(next)
+          )
+        )
+      ) {
         count++;
       }
     }
 
-    if (isClosing) {
-      if (isParagraph(next)) {
-        count++;
-      }
-    }
 
     if (isText(next)) {
 
@@ -262,13 +262,14 @@ function createRange(el, selection) {
     }
 
     if (!isClosing) {
-      if (isDiv(next) || isBr(next)) {
-        count++;
-      }
-    }
-
-    if (isClosing) {
-      if (isParagraph(next)) {
+      if (
+        isBr(next) || (
+          next.previousSibling && (
+            isDiv(next) ||
+            isParagraph(next)
+          )
+        )
+      ) {
         count++;
       }
     }

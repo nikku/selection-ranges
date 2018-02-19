@@ -188,6 +188,25 @@ describe('selection-ranges', function() {
     });
 
 
+    it('cross divs / MS Edge style', function() {
+
+      // given
+      node.innerHTML = '<div>FOO</div><div class="ref">aaaa</div>';
+
+      var range = document.createRange();
+      range.setStart(node.childNodes[0].childNodes[0], 2);
+      range.setEnd(node.querySelector('.ref').childNodes[0], 3);
+
+      applyRange(range);
+
+      // then
+      expect(getRange(node)).to.eql({
+        start: 2,
+        end: 7
+      });
+    });
+
+
     describe('caret', function() {
 
       it('in text / at start', function() {
