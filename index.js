@@ -47,6 +47,12 @@ function isSelected(el) {
 
   var focusNode = selection.focusNode;
 
+  // IE supports Node#contains for elements only
+  // thus we ensure we check against an actual Element node
+  if (isText(focusNode)) {
+    focusNode = focusNode.parentNode;
+  }
+
   return el == focusNode || el.contains(focusNode);
 }
 
