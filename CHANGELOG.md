@@ -6,6 +6,10 @@ All notable changes to [selection-ranges](https://github.com/nikku/selection-ran
 
 ___Note:__ Yet to be released changes appear here._
 
+## 1.2.1
+
+* `FIX`: ensure `isSelected(el)` supports IE 11
+
 ## 1.2.0
 
 * `FEAT`: support MS Edge style `div` containers
