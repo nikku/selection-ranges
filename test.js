@@ -6,6 +6,8 @@ var getRange = require('./').getRange,
     applyRange = require('./').applyRange,
     getWindowSelection = require('./').getWindowSelection;
 
+var PHANTOM_JS = window.navigator.userAgent.indexOf('PhantomJS/') > 0;
+
 
 describe('selection-ranges', function() {
 
@@ -184,6 +186,63 @@ describe('selection-ranges', function() {
       expect(getRange(node)).to.eql({
         start: 2,
         end: 7
+      });
+    });
+
+
+    it('in paragraph / at <br/>', function() {
+
+      // given
+      node.innerHTML = '<p>AA</p><p><br/></p>';
+
+      var range = document.createRange();
+      range.setStart(node.childNodes[1], 0);
+      range.setEnd(node.childNodes[1], 0);
+
+      applyRange(range);
+
+      // then
+      expect(getRange(node)).to.eql({
+        start: 3,
+        end: 3
+      });
+    });
+
+
+    !PHANTOM_JS && it('in paragraph / at end', function() {
+
+      // given
+      node.innerHTML = '<p>AA</p><p></p>';
+
+      var range = document.createRange();
+      range.setStart(node.childNodes[1], 0);
+      range.setEnd(node.childNodes[1], 0);
+
+      applyRange(range);
+
+      // then
+      expect(getRange(node)).to.eql({
+        start: 3,
+        end: 3
+      });
+    });
+
+
+    !PHANTOM_JS && it('behind paragraph / at end', function() {
+
+      // given
+      node.innerHTML = '<p>AA</p><p></p>';
+
+      var range = document.createRange();
+      range.setStartAfter(node.childNodes[1]);
+      range.setEndAfter(node.childNodes[1], 0);
+
+      applyRange(range);
+
+      // then
+      expect(getRange(node)).to.eql({
+        start: 3,
+        end: 3
       });
     });
 
@@ -421,6 +480,63 @@ describe('selection-ranges', function() {
       expect(getRange(node)).to.eql({
         start: 2,
         end: 7
+      });
+    });
+
+
+    it('in paragraph / at <br/>', function() {
+
+      // given
+      node.innerHTML = '<p>AA</p><p><br/></p>';
+
+      // when
+      setRange(node, {
+        start: 3,
+        end: 3
+      });
+
+      // then
+      expect(getRange(node)).to.eql({
+        start: 3,
+        end: 3
+      });
+    });
+
+
+    !PHANTOM_JS && it('in paragraph / at end', function() {
+
+      // given
+      node.innerHTML = '<p>AA</p><p></p>';
+
+      // when
+      setRange(node, {
+        start: 3,
+        end: 3
+      });
+
+      // then
+      expect(getRange(node)).to.eql({
+        start: 3,
+        end: 3
+      });
+    });
+
+
+    !PHANTOM_JS && it('behind paragraph / at end', function() {
+
+      // given
+      node.innerHTML = '<p>AA</p><p></p>';
+
+      // when
+      setRange(node, {
+        start: 3,
+        end: 3
+      });
+
+      // then
+      expect(getRange(node)).to.eql({
+        start: 3,
+        end: 3
       });
     });
 

@@ -96,9 +96,11 @@ function getRange(el) {
   var i = iterator(el.firstChild, el);
 
   var next = i.node;
+  var last;
+
   var isClosing = false;
 
-  var selectionStart = 0;
+  var selectionStart;
   var count = 0;
 
   function isBeforeEnd(node, referenceNode) {
@@ -142,7 +144,7 @@ function getRange(el) {
     if (!isClosing) {
       if (
         isBr(next) || (
-          next.previousSibling && (
+          last && (last.nextSibling == next) && (
             isDiv(next) ||
             isParagraph(next)
           )
@@ -182,13 +184,14 @@ function getRange(el) {
 
     }
 
+    last = next;
     next = i.next();
     isClosing = i.closingTag;
   }
 
   // selection until end of text
   return {
-    start: selectionStart,
+    start: typeof selectionStart === 'undefined' ? count : selectionStart,
     end: count
   };
 }
