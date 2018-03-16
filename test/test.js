@@ -1,10 +1,10 @@
 'use strict';
 
-var getRange = require('./').getRange,
-    setRange = require('./').setRange,
-    isSelected = require('./').isSelected,
-    applyRange = require('./').applyRange,
-    getWindowSelection = require('./').getWindowSelection;
+var getRange = require('../').getRange,
+    setRange = require('../').setRange,
+    isSelected = require('../').isSelected,
+    applyRange = require('../').applyRange,
+    getWindowSelection = require('../').getWindowSelection;
 
 var PHANTOM_JS = window.navigator.userAgent.indexOf('PhantomJS/') > 0;
 
