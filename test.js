@@ -371,6 +371,44 @@ describe('selection-ranges', function() {
 
   describe('setRange', function() {
 
+    it('on empty node', function() {
+
+      // given
+      node.innerHTML = '';
+
+      // when
+      setRange(node, {
+        start: 0,
+        end: 0
+      });
+
+      // then
+      expect(getRange(node)).to.eql({
+        start: 0,
+        end: 0
+      });
+    });
+
+
+    it('on empty / out of range', function() {
+
+      // given
+      node.innerHTML = '';
+
+      // when
+      setRange(node, {
+        start: 10,
+        end: 15
+      });
+
+      // then
+      expect(getRange(node)).to.eql({
+        start: 0,
+        end: 0
+      });
+    });
+
+
     it('full', function() {
 
       // given

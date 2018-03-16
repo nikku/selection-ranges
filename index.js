@@ -306,10 +306,18 @@ function createRange(el, selection) {
 
   // out of range
   if (count <= start) {
-    range.setStartAfter(el.lastChild);
+    if (el.lastChild) {
+      range.setStartAfter(el.lastChild);
+    } else {
+      range.setStart(el, 0);
+    }
   }
 
-  range.setEndAfter(el.lastChild);
+  if (el.lastChild) {
+    range.setEndAfter(el.lastChild);
+  } else {
+    range.setEnd(el, 0);
+  }
 
   return range;
 }
