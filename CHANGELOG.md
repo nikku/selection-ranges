@@ -6,9 +6,13 @@ All notable changes to [selection-ranges](https://github.com/nikku/selection-ran
 
 ___Note:__ Yet to be released changes appear here._
 
+## 1.2.3
+
+* `FIX`: correctly set range on empty node
+
 ## 1.2.2
 
-* `FIX`: properly set range post paragraphs (IE 11)
+* `FIX`: correctly set range post paragraphs (IE 11)
 
 ## 1.2.1
 
