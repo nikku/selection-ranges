@@ -7,4 +7,3 @@ script:
 
 addons:
   firefox: latest
-  chrome: stable
