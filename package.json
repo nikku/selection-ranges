@@ -1,6 +1,6 @@
 {
   "name": "selection-ranges",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Selection range manipulation for contenteditable elements",
   "main": "index.js",
   "scripts": {
