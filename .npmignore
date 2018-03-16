@@ -1,6 +1,10 @@
+!dist
+test
+lib
+.eslintignore
 .eslintrc
 .travis.yml
 CHANGELOG.md
 README.md
 karma.conf.js
-test.js
+rollup.config.js

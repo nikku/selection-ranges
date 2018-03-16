@@ -25,19 +25,17 @@ var browsers =
 module.exports = function(karma) {
   karma.set({
 
+    basePath: '../../',
+
     frameworks: [
-      'browserify',
       'mocha',
       'chai'
     ],
 
     files: [
-      'test/*.js'
+      'dist/selection-ranges.min.js',
+      'test/integration/*.js'
     ],
-
-    preprocessors: {
-      'test/*.js': [ 'browserify' ]
-    },
 
     browsers: browsers,
 
@@ -53,16 +51,6 @@ module.exports = function(karma) {
     },
 
     autoWatch: false,
-    singleRun: true,
-
-    // browserify configuration
-    browserify: {
-      debug: true,
-      transform: [
-        [ 'babelify', {
-          'presets': [ 'env' ]
-        } ]
-      ]
-    }
+    singleRun: true
   });
 };
