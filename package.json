@@ -3,7 +3,8 @@
   "version": "2.0.1",
   "description": "Selection range manipulation for contenteditable elements",
   "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "module": "dist/index.esm.js",
+  "browser": "dist/selection-ranges.js",
   "scripts": {
     "all": "run-s lint test bundle test:integration",
     "bundle": "rollup -c",

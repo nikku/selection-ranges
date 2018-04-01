@@ -2,6 +2,8 @@ import uglify from 'rollup-plugin-uglify';
 import nodeResolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 
+import pkg from './package.json';
+
 function pgl(plugins=[]) {
   return [
     nodeResolve({
@@ -14,27 +16,12 @@ function pgl(plugins=[]) {
 }
 
 export default [
-  {
-    input: 'lib/index.js',
-    output: {
-      file: 'dist/index.mjs',
-      format: 'es'
-    },
-    plugins: pgl()
-  },
-  {
-    input: 'lib/index.js',
-    output: {
-      file: 'dist/index.js',
-      format: 'cjs'
-    },
-    plugins: pgl()
-  },
+  // browser-friendly UMD build
   {
     input: 'lib/index.js',
     output: {
       name: 'SelectionRanges',
-      file: 'dist/selection-ranges.js',
+      file: pkg.browser,
       format: 'umd'
     },
     plugins: pgl()
@@ -43,11 +30,19 @@ export default [
     input: 'lib/index.js',
     output: {
       name: 'SelectionRanges',
-      file: 'dist/selection-ranges.min.js',
+      file: pkg.browser.replace(/\.js$/, '.min.js'),
       format: 'umd'
     },
     plugins: pgl([
       uglify()
     ])
+  },
+  {
+    input: 'lib/index.js',
+    output: [
+      { file: pkg.main, format: 'cjs' },
+      { file: pkg.module, format: 'es' }
+    ],
+    plugins: pgl()
   }
 ];
