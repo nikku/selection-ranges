@@ -6,6 +6,10 @@ All notable changes to [selection-ranges](https://github.com/nikku/selection-ran
 
 ___Note:__ Yet to be released changes appear here._
 
+## 2.1.0
+
+* `CHORE`: add `browser` field
+
 ## 2.0.0
 
 * `CHORE`: migrate to ES6
