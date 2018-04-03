@@ -6,6 +6,12 @@ All notable changes to [selection-ranges](https://github.com/nikku/selection-ran
 
 ___Note:__ Yet to be released changes appear here._
 
+## 3.0.0
+
+### Breaking Changes
+
+* `FIX`: remove browser field again; it confuses modern module bundlers. This partially reverts `v2.1.0`
+
 ## 2.1.0
 
 * `CHORE`: add `browser` field
