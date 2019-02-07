@@ -1,6 +1,6 @@
 {
   "name": "selection-ranges",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Selection range manipulation for contenteditable elements",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
