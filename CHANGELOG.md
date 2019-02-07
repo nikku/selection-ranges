@@ -6,6 +6,14 @@ All notable changes to [selection-ranges](https://github.com/nikku/selection-ran
 
 ___Note:__ Yet to be released changes appear here._
 
+## 3.0.2
+
+_Republish of `v3.0.1` with update changelog._
+
+## 3.0.1
+
+* `FIX`: make `babel` a development dependency ([#1](https://github.com/nikku/selection-ranges/issues/1))
+
 ## 3.0.0
 
 ### Breaking Changes
