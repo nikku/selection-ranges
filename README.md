@@ -1,6 +1,6 @@
 # selection-ranges
 
-[![Build Status](https://travis-ci.org/nikku/selection-ranges.svg?branch=master)](https://travis-ci.org/nikku/selection-ranges)
+[![Build Status](https://travis-ci.com/nikku/selection-ranges.svg?branch=master)](https://travis-ci.com/nikku/selection-ranges)
 
 Manipulate selection ranges on contenteditable elements.
 
