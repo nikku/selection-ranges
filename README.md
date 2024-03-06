@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/nikku/selection-ranges/actions/workflows/CI.yml/badge.svg)](https://github.com/nikku/selection-ranges/actions/workflows/CI.yml)
 
-Manipulate selection ranges on contenteditable elements.
+Manipulate selection ranges on `contenteditable` elements.
 
 
 ## API
