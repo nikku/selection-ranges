@@ -4,7 +4,7 @@ import commonjs from 'rollup-plugin-commonjs';
 
 import pkg from './package.json';
 
-function pgl(plugins=[]) {
+function pgl(plugins = []) {
   return [
     nodeResolve({
       jsnext: true,
@@ -18,6 +18,7 @@ function pgl(plugins=[]) {
 const umdDist = 'dist/selection-ranges.js';
 
 export default [
+
   // browser-friendly UMD build
   {
     input: 'lib/index.js',
