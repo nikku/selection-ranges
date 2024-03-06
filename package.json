@@ -36,8 +36,6 @@
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
     "chai": "^4.4.1",
     "eslint": "^8.57.0",
     "eslint-plugin-bpmn-io": "^1.0.0",
