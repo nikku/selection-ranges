@@ -8,8 +8,6 @@ var {
   getWindowSelection
 } = require('../lib');
 
-var PHANTOM_JS = window.navigator.userAgent.indexOf('PhantomJS/') > 0;
-
 
 describe('selection-ranges', function() {
 
@@ -211,7 +209,7 @@ describe('selection-ranges', function() {
     });
 
 
-    !PHANTOM_JS && it('in paragraph / at end', function() {
+    it('in paragraph / at end', function() {
 
       // given
       node.innerHTML = '<p>AA</p><p></p>';
@@ -230,7 +228,7 @@ describe('selection-ranges', function() {
     });
 
 
-    !PHANTOM_JS && it('behind paragraph / at end', function() {
+    it('behind paragraph / at end', function() {
 
       // given
       node.innerHTML = '<p>AA</p><p></p>';
@@ -543,7 +541,7 @@ describe('selection-ranges', function() {
     });
 
 
-    !PHANTOM_JS && it('in paragraph / at end', function() {
+    it('in paragraph / at end', function() {
 
       // given
       node.innerHTML = '<p>AA</p><p></p>';
@@ -562,7 +560,7 @@ describe('selection-ranges', function() {
     });
 
 
-    !PHANTOM_JS && it('behind paragraph / at end', function() {
+    it('behind paragraph / at end', function() {
 
       // given
       node.innerHTML = '<p>AA</p><p></p>';
