@@ -6,6 +6,10 @@ All notable changes to [selection-ranges](https://github.com/nikku/selection-ran
 
 ___Note:__ Yet to be released changes appear here._
 
+## 4.0.1
+
+* `FIX`: correctly handle repeated visits to start container ([#3](https://github.com/nikku/selection-ranges/issues/3))
+
 ## 4.0.0
 
 * `FEAT`: add `exports` field
