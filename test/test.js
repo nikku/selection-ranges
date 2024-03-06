@@ -375,10 +375,10 @@ describe('selection-ranges', function() {
         applyRange(range);
 
         // then
-        expect(getRange(node).to.eql({
+        expect(getRange(node)).to.eql({
           start: 0,
           end: 3
-        }));
+        });
       });
 
     });
