@@ -362,6 +362,25 @@ describe('selection-ranges', function() {
         });
       });
 
+
+      it('with start/end container at root', function() {
+
+        // given
+        node.innerHTML = '<span>A</span><span>B</span><span>C</span>';
+
+        // when
+        var range = document.createRange();
+        range.setStart(node, 0);
+        range.setEnd(node, 3);
+        applyRange(range);
+
+        // then
+        expect(getRange(node)).to.eql({
+          start: 0,
+          end: 3
+        });
+      });
+
     });
 
   });
