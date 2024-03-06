@@ -1,12 +1,10 @@
-'use strict';
-
-var {
+import {
   getRange,
   setRange,
   isSelected,
   applyRange,
   getWindowSelection
-} = require('../lib');
+} from 'selection-ranges';
 
 
 describe('selection-ranges', function() {
