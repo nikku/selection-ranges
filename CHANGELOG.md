@@ -6,6 +6,18 @@ All notable changes to [selection-ranges](https://github.com/nikku/selection-ran
 
 ___Note:__ Yet to be released changes appear here._
 
+## 4.0.0
+
+* `FEAT`: add `exports` field
+* `FEAT`: turn into ES module
+* `CHORE`: generate sourcemap
+* `CHORE`: update dependencies
+* `CHORE`: drop UMD distribution
+
+### Breaking Changes
+
+* Drop UMD distribution. Use ES module export instead.
+
 ## 3.0.3
 
 * `CHORE`: package `LICENSE` file
