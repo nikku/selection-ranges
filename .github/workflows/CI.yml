@@ -1,0 +1,25 @@
+name: CI
+on: [ push, pull_request ]
+jobs:
+  Build:
+
+    strategy:
+      matrix:
+        os: [ ubuntu-20.04 ]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+        cache: 'npm'
+    - name: Install dependencies
+      run: npm ci
+    - name: Build
+      env:
+        TEST_BROWSERS: Firefox,ChromeHeadless
+      run: xvfb-run npm run all
