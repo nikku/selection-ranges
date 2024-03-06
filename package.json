@@ -6,7 +6,7 @@
   "module": "dist/index.esm.js",
   "scripts": {
     "all": "run-s lint test bundle test:integration",
-    "bundle": "rollup -c",
+    "bundle": "rollup -c --bundleConfigAsCjs",
     "dev": "npm test -- --auto-watch --no-single-run",
     "lint": "eslint .",
     "prepublishOnly": "run-s bundle test:integration",
@@ -28,6 +28,9 @@
   "author": "Nico Rehwaldt <git_nikku@nixis.de>",
   "license": "MIT",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "chai": "^4.4.1",
@@ -42,10 +45,7 @@
     "mocha": "^10.3.0",
     "npm-run-all": "^4.1.2",
     "puppeteer": "^22.4.0",
-    "rollup": "^1.1.2",
-    "rollup-plugin-commonjs": "^9.1.0",
-    "rollup-plugin-node-resolve": "^4.0.0",
-    "rollup-plugin-uglify": "^6.0.2",
+    "rollup": "^4.12.1",
     "webpack": "^5.90.3"
   },
   "dependencies": {
