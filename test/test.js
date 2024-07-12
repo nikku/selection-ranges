@@ -263,6 +263,23 @@ describe('selection-ranges', function() {
       });
     });
 
+    it('at end-of-line <br /> (Firefox style)', function() {
+
+      // given
+      node.innerHTML = 'FOO<br>BAR';
+
+      const range = document.createRange();
+      range.setStart(node.childNodes[1], 0);
+      range.setEnd(node.childNodes[1], 0);
+
+      applyRange(range);
+
+      expect(getRange(node)).to.eql({
+        start: 3,
+        end: 3
+      });
+    });
+
 
     describe('caret', function() {
 
