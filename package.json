@@ -1,6 +1,6 @@
 {
   "name": "selection-ranges",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "description": "Selection range manipulation for contenteditable elements",
   "type": "module",
   "exports": {
