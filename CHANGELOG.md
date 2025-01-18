@@ -6,6 +6,10 @@ All notable changes to [selection-ranges](https://github.com/nikku/selection-ran
 
 ___Note:__ Yet to be released changes appear here._
 
+## 4.0.3
+
+* `DEPS`: update to `dom-iterator@1.0.2` ([#7](https://github.com/nikku/selection-ranges/issues/7))
+
 ## 4.0.2
 
 * `FIX`: correctly handle selection at end-of-line ([#6](https://github.com/nikku/selection-ranges/pull/6))
