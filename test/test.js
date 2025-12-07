@@ -6,6 +6,8 @@ import {
   getWindowSelection
 } from 'selection-ranges';
 
+import { expect } from 'chai';
+
 
 describe('selection-ranges', function() {
 
