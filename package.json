@@ -1,6 +1,6 @@
 {
   "name": "selection-ranges",
-  "version": "4.0.3",
+  "version": "4.1.0",
   "description": "Selection range manipulation for contenteditable elements",
   "type": "module",
   "types": "./dist/index.d.ts",
