@@ -3,15 +3,19 @@
   "version": "4.0.3",
   "description": "Selection range manipulation for contenteditable elements",
   "type": "module",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js"
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     },
     "./package.json": "./package.json"
   },
   "scripts": {
     "all": "run-s lint test",
-    "bundle": "rollup -c --bundleConfigAsCjs",
+    "bundle": "run-s bundle-js generate-types",
+    "bundle-js": "rollup -c --bundleConfigAsCjs",
+    "generate-types": "tsc --emitDeclarationOnly -d --outdir dist",
     "dev": "npm test -- --auto-watch --no-single-run",
     "lint": "eslint .",
     "pretest": "run-s bundle",
@@ -49,6 +53,7 @@
     "npm-run-all": "^4.1.2",
     "puppeteer": "^24.1.0",
     "rollup": "^4.30.1",
+    "typescript": "^5.9.3",
     "webpack": "^5.97.1"
   },
   "dependencies": {
