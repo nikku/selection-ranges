@@ -6,6 +6,11 @@ All notable changes to [selection-ranges](https://github.com/nikku/selection-ran
 
 ___Note:__ Yet to be released changes appear here._
 
+## 4.1.1
+
+* `FIX`: allow import from CommonJS
+* `CHORE`: restore `main` file
+
 ## 4.1.0
 
 * `FEAT`: add type definitions

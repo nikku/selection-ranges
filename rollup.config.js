@@ -4,8 +4,6 @@ import commonjs from '@rollup/plugin-commonjs';
 import pkg from './package.json';
 
 
-const pkgExports = pkg.exports['.'];
-
 function pgl(plugins = []) {
   return [
     nodeResolve(),
@@ -18,7 +16,7 @@ export default [
   {
     input: 'lib/index.js',
     output: [
-      { file: pkgExports.import, format: 'es', sourcemap: true }
+      { file: pkg.exports['.'], format: 'es', sourcemap: true }
     ],
     plugins: pgl()
   }
